@@ -88,7 +88,12 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 }
 
 .hero-card {
-  padding: 2rem;
+  padding: 1rem;
+}
+
+.hero-card p {
+  font-weight: 600;
+  color: var(--color-text-muted);
 }
 
 .hero-grid {
@@ -138,8 +143,8 @@ h1 span {
 
 .about-card {
   padding: 2rem 1rem 1rem 3rem;
-  border-bottom: 3px solid var(--color-surface);
-  border-right: 3px solid var(--color-surface);
+  border-bottom: 2px solid var(--color-surface);
+  border-right: 2px solid var(--color-surface);
   color: var(--color-white);
 }
 
@@ -170,7 +175,7 @@ h1 span {
 
 @media (max-width: 768px) {
   .hero-section {
-    padding: 250px 0 200px 0;
+    padding: 175px 0 150px 0;
   }
   .hero-grid, .about-grid {
     grid-template-columns: 1fr;
