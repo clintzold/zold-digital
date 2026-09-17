@@ -4,6 +4,7 @@ import heroBg from '../assets/images/frozen-lake.jpg'
 import logo from '../assets/images/logo-trim.png'
 const bgUrl = `url(${heroBg.src})`
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <BaseLayout pageTitle="Home | Zold Digital">
@@ -13,8 +14,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         <img class="img-fluid" src={logo.src} alt="">
         <div class="hero-card">
           <div class="hero-text">
-            <h1>Websites and software built for the <span>North</span></h1>
-            <p>Hi, my name is Clint Zold. I know that there is no one-size-fits all when it comes to business and lifestyle here in Canada. Proudly based out of Timmins, Ontario - Zold Digital Solutions serves Northern businesses with custom, hand-coded websites.</p>
+            <h1>Websites built for the <span>North</span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto natus itaque veniam animi dicta. Eum exercitationem qui ex eius quibusdam.</p>
             <a class="btn"href="#">Contact Me</a>
           </div>
         </div>
@@ -36,6 +37,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </section>
   <section class="services-section">
     <div class="container">
+      <h2>Services</h2>
       <div class="services-grid">
         <div class="service-card">
           <div class="card-text">
@@ -76,14 +78,23 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       </div>
     </div>
   </section>
-  <section class="work-section">
+  <section class="testimonials">
+    <div class="container">
+      <h2>Who we've helped</h2>
+    </div>
   </section>
+  <section class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+    </div>
+  </section>
+  <Footer/>
 </BaseLayout>
 
 <style define:vars={{bgUrl}}>
 .hero-section {
   position: relative;
-  background: rgb(from var(--color-surface) r g b / 0.7);
+  background: rgb(from var(--color-surface) r g b / 0.8);
   padding: 450px 0 400px 0;
 }
 
@@ -149,7 +160,7 @@ h1 span {
 }
 
 .services-section {
-  background: var(--color-surface);
+  background: var(--color-primary-light);
 
 }
 

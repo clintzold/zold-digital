@@ -1,0 +1,95 @@
+---
+import instaIcon from '../assets/images/instagram.svg'
+import fbIcon from '../assets/images/facebook.svg'
+---
+<footer>
+  <div class="container">
+    <p class="copyright">Copyright &copy; 2026 Zold Digital Solutions. All Rights Reserved.</p>
+    <div class="footer-grid">
+        <div class="site-links-container">
+          <h3>Site Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="socials-container">
+          <h3>Socials</h3>
+          <div class="social-links">
+            <a href="#"><img class="instagram hover-icon" src={instaIcon.src} alt=""></a>
+            <a href="#"><img class="facebook hover-icon" src={fbIcon.src} alt=""></a>
+          </div>
+        </div>
+      <div class="address">
+        <h3>Address</h3>
+        <p>
+          Zold Digital Solutions<br>
+          456 County Rd 42<br>
+          Windsor, ON<br>
+          N8N 2L9<br>
+        </p>
+      </div>
+      <div class="contact-info">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="#">info@zold-digital.com</a></li>
+          <li><a href="tel:17052740375">705 274-0375</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+</footer>
+
+<style>
+footer {
+  padding: 50px 1rem;
+  background: var(--color-primary-light);
+  color: var(--color-surface);
+}
+
+
+.copyright {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 0;
+}
+
+.instagram {
+  width: 50px;
+  margin-right: 1rem;
+}
+.facebook {
+  width: 60px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+}
+
+.hover-icon:hover, a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    place-items: start;
+  }
+}
+</style>
