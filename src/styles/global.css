@@ -43,6 +43,10 @@ a {
   color: inherit;
 }
 
+li {
+  margin-bottom: 0.5rem;
+}
+
 
 /* Containers */
 .container {
@@ -57,7 +61,10 @@ a {
   height: auto;
 }
 
-
+/* Fonts & Text */
+.light-text {
+  color: var(--color-surface);
+}
 
 /* Buttons */
 

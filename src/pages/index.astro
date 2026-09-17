@@ -24,11 +24,17 @@ import Footer from '../components/Footer.astro'
     <div class="hero-bg"></div>
   </section>
   <section id="about" class="about-section">
+      <div class="arrow-base">
+        <div class="arrow-middle">
+          <div class="arrow-point">
+          </div>
+        </div>
+      </div>
     <div class="container">
+      <h2 class="light-text">Who we are</h2>
       <div class="about-grid">
-        <div class="about-card">
-          <h2>Who am I?</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit adipisci inventore a repellendus quis labore id odio dolorum esse. Inventore vitae ullam et harum temporibus.</p>
+        <div class="about-card light-text">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae facere alias corporis itaque libero nesciunt pariatur distinctio repellendus sunt, obcaecati aspernatur illo nam esse quis illum voluptatum consectetur aperiam sequi!</p>
           <a href="#" class="btn">Read My Story</a>
         </div>
         <img class="about-image" src={aboutImg.src} alt="">
@@ -37,41 +43,41 @@ import Footer from '../components/Footer.astro'
   </section>
   <section class="services-section">
     <div class="container">
-      <h2>Services</h2>
+      <h2>What we do</h2>
       <div class="services-grid">
         <div class="service-card">
           <div class="card-text">
             <h3>Web Design & Development</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, commodi.</p>
+            <p>My websites are fast, performant and built to turn your visitors into clients. Secure and free of fluff content.</p>
             <ul>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem ipsum dolor sit.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Hand-coded(no AI)</li>
+              <li>Professional written content</li>
+              <li>Blazing fast load times</li>
+              <li>Hands-free(hosting and maintenance packages available)</li>
             </ul>
           </div>
         </div>
         <div class="service-card">
           <div class="card-text">
             <h3>Marketing & SEO</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, commodi.</p>
+            <p>Ad campaigns, Search Engine Optimization and a properly setup Google Business Profile help your business get noticed.</p>
             <ul>
-              <li>Lorem, ipsum dolor sit.</li>
-              <li>Lorem, ipsum dolor sit.</li>
-              <li>Lorem ipsum dolor sit.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Targeted ad campaign strategies</li>
+              <li>Keyword optimization</li>
+              <li>Track ad and website performance with analytics</li>
+              <li>Optimize your Google Business Profile to rank in local search results</li>
             </ul>
           </div>
         </div>
         <div class="service-card">
           <div class="card-text">
-            <h3>Social Media Managament</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, vitae.</p>
+            <h3>Social Media Management</h3>
+            <p>Brand specific content and social media engagement by a real human that understands your business goals and ethos</p>
             <ul>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem, ipsum dolor.</li>
-              <li>Lorem ipsum dolor sit.</li>
-              <li>Lorem ipsum dolor sit amet.</li>
+              <li>Real Content(no generic AI slop)</li>
+              <li>Consistent online presence</li>
+              <li>Authentic, human engagement with your audience</li>
+              <li>Bespoke graphics and images with real photos</li>
             </ul>
           </div>
         </div>
@@ -92,6 +98,37 @@ import Footer from '../components/Footer.astro'
 </BaseLayout>
 
 <style define:vars={{bgUrl}}>
+.arrow-section {
+  padding: 100px 0;
+  background: var(--color-primary-light);
+}
+.arrow-base {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50%);
+  opacity: 0.1;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  padding-top: 150px;
+  background: var(--color-primary);
+  overflow: hidden;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+}
+.arrow-middle {
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  background: var(--color-accent-light);
+}
+.arrow-point {
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  background: var(--color-accent-dark);
+}
+
 .hero-section {
   position: relative;
   background: rgb(from var(--color-surface) r g b / 0.8);
@@ -139,6 +176,8 @@ h1 span {
 }
 
 .about-section {
+  z-index: 0;
+  position: relative;
   background: var(--color-primary-light);
 }
 
@@ -152,32 +191,54 @@ h1 span {
   padding: 2rem 1rem 1rem 3rem;
   border-bottom: 2px solid var(--color-surface);
   border-right: 2px solid var(--color-surface);
-  color: var(--color-white);
+  font-weight: 500;
 }
 
 .services-section {
   background: var(--color-primary-light);
-
 }
 
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
-  gap: 2rem;
+  gap: 1rem;
+  height: 100%;
 }
 
 .service-card {
   padding: 2rem;
   background: var(--color-white);
   box-shadow: 3px 5px 20px -15px rgba(128, 128, 128, 0.3);
-  border: 4px solid var(--color-primary-light);
-  border-radius: 5px;
-  transform: skewX(-10deg);
+  border: 5px solid var(--color-border);
+  border-radius: 8px;
+  transform: skewX(-5deg);
+  height: 350px;
+}
+
+.service-card ul {
+  padding: 0;
+}
+.service-card li {
+  font-weight: bold;
+  color: var(--color-text-muted);
+  position: relative;
+  padding-left: 2rem;
+}
+.service-card li::before {
+  position: absolute;
+  left: 0;
+  top: -.25rem;
+  content: "\2713";
+  font-size: 1.25rem;
 }
 
 .service-card .card-text {
-  transform: skewX(10deg);
+  transform: skewX(5deg) translateX(5px);
+}
+
+.services-section h2 {
+  color: var(--color-surface);
 }
 
 @media (max-width: 768px) {
